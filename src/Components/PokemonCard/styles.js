@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  background-color: ${(props) => props.color};
   border: 1px solid black;
   margin: 16px;
   max-width: 17rem;
   text-align: center;
   border-radius: 10px;
   box-shadow: 10px 10px 30px #bdbdbd;
+  background-color: ${(props) => props.color};
+
+  img{
+    height: 200px;
+  }
 `;
 
 export const PokemonName = styled.h2`
