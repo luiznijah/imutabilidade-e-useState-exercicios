@@ -3,18 +3,37 @@ import {Card, PokemonName, PokemonType, EvolveButton} from './styles'
 
 
 
-const PokemonCard = (props) => {
+const PokemonCard = ({
+  nome, 
+  tipo, 
+  evolved, 
+  peso, 
+  cor, 
+  imagem, 
+  id, 
+  setPokemon,
+  evolutionPokemon
+  } ) => {
 
     const evoluirPokemon = () => {
-        console.log("Cliquei no botão de evoluir")
+      console.log(nome)
+
+      if(evolved){
+        alert("esse pokemon não evolui")
+
+      } else{
+        setPokemon(evolutionPokemon)
+
+      }    
+
     }
     
   return (
-    <Card color={}>
-        <img src={} alt={`Pokemon`}/>
-        <PokemonName>{}</PokemonName>
-        <PokemonType>{}</PokemonType>
-        <p>{}kg</p>
+    <Card color={cor}>
+        <img src={imagem} alt={`Pokemon`}/>
+        <PokemonName>{nome}</PokemonName>
+        <PokemonType>{tipo}</PokemonType>
+        <p>{peso}kg</p>
 
         <EvolveButton onClick={() => evoluirPokemon()}>Evoluir!</EvolveButton>
     </Card>
